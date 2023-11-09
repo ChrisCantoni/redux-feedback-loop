@@ -1,8 +1,10 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 
 function Feeling() {
     const [newFeeling, setNewFeeling] = useState(0);
+    const history = useHistory();
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
@@ -10,6 +12,7 @@ function Feeling() {
         console.log('Feeling', newFeeling);
         const action = {type: 'SET_FEELING', payload: newFeeling}
         dispatch(action);
+        history.push('/2');
     }
 
     return (
