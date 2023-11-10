@@ -7,6 +7,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comment from '../Comment/Comment';
 import { useSelector, useDispatch} from 'react-redux';
+import Review from '../Review/Review';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
             <ul>
               <li><Link to="/">Feeling</Link></li>
               <li><Link to="/2">Understanding</Link></li>
-              <li><Link to="/3">Support</Link></li>
+              <li><Link to="/support">Support</Link></li>
               <li><Link to="/4">Comment</Link></li>
             </ul>
           </nav>
@@ -36,17 +37,16 @@ function App() {
           <Route exact path="/2">
             <Understanding/>
           </Route>
-          <Route exact path="3">
+          <Route exact path="/support">
             <Support/>
           </Route>
-          <Route exact path="4">
+          <Route exact path="/4">
             <Comment/>
           </Route>
+          <Route exact path="/review">
+            <Review/>
+          </Route>
         </Router>
-        <h3>Feeling: {feeling}</h3>
-        <h3>Understanding: {understanding}</h3>
-        <h3>Support: {support}</h3>
-        <h3>Comment: {comment}</h3>
       </header>
     </div>
   );

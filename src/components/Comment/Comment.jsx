@@ -1,6 +1,8 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 function Comment() {
     const [newComment, setNewComment] = useState('');
@@ -12,15 +14,18 @@ function Comment() {
         console.log('Comment', newComment);
         const action = {type: 'SET_COMMENT', payload: newComment}
         dispatch(action);
-        // history.push('/5');
+        history.push('/review');
     }
 
     return (
         <div>
-            <h3>How well are you understanding the material?</h3>
+            <h3>Would you like to add additional comments?</h3>
         <form onSubmit={handleSubmit}>
-            <input type="text" value={newComment} onChange={(e) => setNewComment(e.target.value)}/>
-            <button type="submit">Next</button>
+            <TextField variant="filled" placeholder="Comments are entirely optional" 
+            value={newComment} onChange={(e) => setNewComment(e.target.value)} multiline minRows={4} 
+            size="medium" sx={{width: {sm:200, md:300}}}/>
+            <br/>
+            <Button variant="contained" type="submit">Next</Button>
         </form>
         </div>
     )
