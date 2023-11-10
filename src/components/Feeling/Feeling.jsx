@@ -1,27 +1,50 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import Radio from '@mui/material/Radio';
+import RadioGroup, {useRadioGroup} from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import Button from '@mui/material/Button';
 
 function Feeling() {
-    const [newFeeling, setNewFeeling] = useState(0);
+    const [value, setValue] = useState(useSelector(store => store.feeling));
     const history = useHistory();
     const dispatch = useDispatch();
 
+    const handleRadioChange = (e) => {
+        setValue(e.target.value);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Feeling', newFeeling);
-        const action = {type: 'SET_FEELING', payload: newFeeling}
+        console.log('Feeling', value);
+        const action = {type: 'SET_FEELING', payload: value}
         dispatch(action);
         history.push('/2');
     }
 
     return (
         <div>
-        <h3>How are you feeling today?</h3>
-        <form onSubmit={handleSubmit}>
-            <input type="number" value={newFeeling} min="1" max="5" 
-            onChange={(e) => setNewFeeling(e.target.value)}/>
-            <button type="submit">Next</button>
+            <form onSubmit={handleSubmit}>
+            <FormControl>
+        <FormLabel>How are you feeling today?</FormLabel>
+            <RadioGroup row
+            value={value}
+            onChange={handleRadioChange}>
+
+                <FormControlLabel value="1" control={<Radio />} label="1" labelPlacement="bottom"/>
+                <FormControlLabel value="2" control={<Radio />} label="2" labelPlacement="bottom"/>
+                <FormControlLabel value="3" control={<Radio />} label="3" labelPlacement="bottom"/>
+                <FormControlLabel value="4" control={<Radio />} label="4" labelPlacement="bottom"/>
+                <FormControlLabel value="5" control={<Radio />} label="5" labelPlacement="bottom"/>
+            </RadioGroup>
+            <br/>
+            <Button variant="contained" type="submit">Next</Button>
+
+        </FormControl>
         </form>
         </div>
     )

@@ -12,7 +12,7 @@ function Understanding() {
         console.log('Understanding', newUnderstanding);
         const action = {type: 'SET_UNDERSTANDING', payload: newUnderstanding}
         dispatch(action);
-        history.push('/3');
+        history.push('/support');
     }
 
     return (
