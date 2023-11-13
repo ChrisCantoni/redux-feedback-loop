@@ -5,6 +5,7 @@ import axios from 'axios';
 
 function Review(){
 
+    const history = useHistory();
 
   const feeling = useSelector(store => store.feeling);
   const understanding = useSelector(store => store.understanding);
@@ -21,6 +22,7 @@ function Review(){
         comments: comment
     }).then((response) => {
         console.log('POST successful');
+        history.push('/thankyou')
     }).catch((error) => {
         console.log('POST error', error);
         alert('Post went bad');
