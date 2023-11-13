@@ -1,6 +1,6 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import Radio from '@mui/material/Radio';
 import RadioGroup, {useRadioGroup} from '@mui/material/RadioGroup';
@@ -42,7 +42,10 @@ function Support() {
                 <FormControlLabel value="5" control={<Radio />} label="5" labelPlacement="bottom"/>
             </RadioGroup>
             <br/>
+            <div className="button">
+            <Button variant="contained" component={Link} to="/2">Back</Button>
             <Button variant="contained" type="submit">Next</Button>
+            </div>
 
         </FormControl>
         </form>

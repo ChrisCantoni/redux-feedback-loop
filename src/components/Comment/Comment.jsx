@@ -1,6 +1,6 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
@@ -25,7 +25,10 @@ function Comment() {
             value={newComment} onChange={(e) => setNewComment(e.target.value)} multiline minRows={4} 
             size="medium" sx={{width: {sm:200, md:300}}}/>
             <br/>
+            <div className="button">
+            <Button variant="contained" component={Link} to="/3">Back</Button>
             <Button variant="contained" type="submit">Next</Button>
+            </div>
         </form>
         </div>
     )

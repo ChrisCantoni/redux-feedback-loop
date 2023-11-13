@@ -1,0 +1,8 @@
+.button {
+
+    justify-content:space-around;
+    text-align: center;
+    display: flex;
+    width: 200px;
+    margin: auto;
+  }

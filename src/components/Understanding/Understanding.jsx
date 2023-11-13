@@ -1,6 +1,7 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import Radio from '@mui/material/Radio';
 import RadioGroup, {useRadioGroup} from '@mui/material/RadioGroup';
@@ -8,6 +9,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
+import './Understanding.css';
 
 function Understanding() {
     const [newUnderstanding, setNewUnderstanding] = useState(useSelector(store => store.understanding));
@@ -27,7 +29,8 @@ function Understanding() {
     }
 
     return (
-        <div>
+        <div className="fullform">
+            
             <form onSubmit={handleSubmit}>
                 <FormControl>
             <FormLabel>How well are you understanding the content?</FormLabel>
@@ -41,9 +44,11 @@ function Understanding() {
                 <FormControlLabel value="4" control={<Radio />} label="4" labelPlacement="bottom"/>
                 <FormControlLabel value="5" control={<Radio />} label="5" labelPlacement="bottom"/>
             </RadioGroup>
-            <br/>
+            <br />
+            <div className="button">
+            <Button variant="contained" component={Link} to="/">Back</Button>
             <Button variant="contained" type="submit">Next</Button>
-
+            </div>
         </FormControl>
         </form>
         </div>
