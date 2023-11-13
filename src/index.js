@@ -34,9 +34,9 @@ const support = (state = 0, action) => {
 const comment = (state = 0, action) => {
     if (action.type === 'SET_COMMENT') {
         console.log('comment', action.type, action.payload)
-        return action.payload
+        return action.payload;
     } else {
-        return state
+        return state;
     }};
 
   const reduxStore = createStore(
