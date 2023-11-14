@@ -9,6 +9,7 @@ import Comment from '../Comment/Comment';
 import { useSelector, useDispatch} from 'react-redux';
 import Review from '../Review/Review';
 import Thankyou from '../Thankyou/Thankyou';
+import Admin from '../Admin/Admin';
 
 
 function App() {
@@ -49,6 +50,9 @@ function App() {
           </Route>
           <Route exact path="/thankyou">
             <Thankyou />
+          </Route>
+          <Route exact path="/admin">
+            <Admin/>
           </Route>
         </Router>
       </header>
