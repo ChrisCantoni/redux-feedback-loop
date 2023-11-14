@@ -10,7 +10,9 @@ const feeling = (state = 0, action) => {
     if (action.type === 'SET_FEELING') {
     console.log('feeling', action.type, action.payload)
     return action.payload 
-  } else {
+  } else if (action.type === 'RESET') {
+    return state = 0;
+}  else {
     return state
   }
 }
@@ -19,7 +21,9 @@ const understanding = (state = 0, action) => {
     if (action.type === 'SET_UNDERSTANDING') {
     console.log('understanding', action.type, action.payload)
     return action.payload
-} else {
+} else if (action.type === 'RESET') {
+    return state = 0;
+}  else {
     return state
 }}
 
@@ -27,7 +31,9 @@ const support = (state = 0, action) => {
     if (action.type === 'SET_SUPPORT') {
         console.log('support', action.type, action.payload)
         return action.payload
-    } else {
+    } else if (action.type === 'RESET') {
+        return state = 0;
+    }  else {
         return state
     }};
 
@@ -35,9 +41,13 @@ const comment = (state = 0, action) => {
     if (action.type === 'SET_COMMENT') {
         console.log('comment', action.type, action.payload)
         return action.payload;
-    } else {
+    } else if (action.type === 'RESET') {
+        return state = 0;
+    }  else {
         return state;
     }};
+
+
 
   const reduxStore = createStore(
     combineReducers({
