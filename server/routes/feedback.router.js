@@ -4,7 +4,7 @@ const pool = require('../modules/pool');
 
 // GET
 router.get('/', (req, res) => {
-    queryText = `SELECT * FROM "feedback";`;
+    queryText = `SELECT * FROM "feedback" ORDER BY "id" DESC;`;
     pool.query(queryText)
     .then((result) => {
         console.log('GET /feedback successful');
@@ -33,9 +33,31 @@ router.post('/', (req, res) => {
 })
 
 // PUT
-
+router.put('/:id', (req, res) => {
+    let queryText = `
+    UPDATE "feedback" SET "flagged" = NOT "flagged"
+    WHERE "id" = $1;`;
+    pool.query(queryText, [req.params.id])
+    .then((result) => {
+        res.sendStatus(201);
+    }).catch((error) => {
+        console.log('Could not be flagged', error);
+        res.sendStatus(500);
+    })
+})
 
 // DELETE
-
+router.delete('/:id', (req, res) => {
+    let queryText = `
+    DELETE FROM "feedback" WHERE "id" = $1;
+    `;
+    pool.query(queryText, [req.params.id])
+    .then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.error('DELETE req failed', error);
+        res.sendStatus(500);
+    })
+})
 
 module.exports = router;
