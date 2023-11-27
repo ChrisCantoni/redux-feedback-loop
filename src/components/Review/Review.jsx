@@ -2,6 +2,8 @@ import {useSelector, useDispatch} from 'react-redux';
 import Button from '@mui/material/Button';
 import {useHistory, Link} from 'react-router-dom';
 import axios from 'axios';
+import { Typography } from '@mui/material';
+import '../Understanding/Understanding.css';
 
 function Review(){
 
@@ -30,17 +32,22 @@ function Review(){
   }
 
   return (
-        <div>
-            <h3>Here is a summary of your feedback:</h3>
-            <h4>Feeling: {feeling}</h4>
-            <h4>Understanding: {understanding}</h4>
-            <h4>Support: {support}</h4>
-            <h4>Comments: {comment}</h4>
+        <>
+            <div className="feedback">
+            <Typography color="primary">
+            <h2>Here's a summary of your feedback:</h2>
+            <h3>Feeling: {feeling}</h3>
+            <h3>Understanding: {understanding}</h3>
+            <h3>Support: {support}</h3>
+            <h3>Comments: {comment}</h3>
+            <br/>
+            </Typography>
+            </div>
             <div className="button">
             <Button variant="contained" component={Link} to="/comment">Back</Button>
             <Button variant="contained" onClick={submitFeedback}>Submit</Button>
             </div>
-        </div>
+        </>
   )
 }
 

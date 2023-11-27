@@ -11,6 +11,7 @@ import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import './Understanding.css';
 import Swal from 'sweetalert2';
+import { Typography } from '@mui/material';
 
 function Understanding() {
     const [newUnderstanding, setNewUnderstanding] = useState(useSelector(store => store.understanding));
@@ -40,7 +41,11 @@ function Understanding() {
             
             <form onSubmit={handleSubmit}>
                 <FormControl>
-            <FormLabel>How well are you understanding the content?</FormLabel>
+            <FormLabel>
+                <Typography color="primary" variant="headline" component="h2">
+                How well did you understand <br /> today's content?
+                </Typography>
+                </FormLabel>
             <RadioGroup row
             value={newUnderstanding}
             onChange={handleRadioChange}>

@@ -9,6 +9,7 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import Swal from 'sweetalert2';
+import { Typography } from '@mui/material';
 
 function Feeling() {
     const [value, setValue] = useState(useSelector(store => store.feeling));
@@ -38,7 +39,10 @@ function Feeling() {
     <div>
         <form onSubmit={handleSubmit}>
             <FormControl>
-                <FormLabel>How are you feeling today?</FormLabel>
+                <FormLabel>
+                    <Typography color="primary" variant="headline" component="h2">
+                    How are you feeling today?
+                        </Typography></FormLabel>
                     <RadioGroup row
                     value={value}
                     onChange={handleRadioChange}>

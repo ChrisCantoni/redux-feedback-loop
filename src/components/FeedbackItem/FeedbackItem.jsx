@@ -50,8 +50,8 @@ const FeedbackItem = (props) => {
                 <td>{props.item.understanding}</td>
                 <td>{props.item.support}</td>
                 <td>{props.item.comments}</td>
-                <td><Button variant="contained" sx={{backgroundColor:"red"}} onClick={toggleFlag}>{props.item.flagged ? <FlagIcon sx={{}}/> 
-                : <EmojiFlagIcon sx={{color:"red"}}/>}</Button></td>
+                <td><Button variant="contained" sx={{backgroundColor:"red", ":hover":{backgroundColor:"red"}}} onClick={toggleFlag}>{props.item.flagged ? <FlagIcon sx={{}}/> 
+                : <EmojiFlagIcon sx={{color:"red", ":hover":{backgroundColor: "red"}}}/>}</Button></td>
                 <td>{date}</td>
                 <td><Button variant="contained" onClick={deleteFeedback}>Delete</Button></td>
             </tr>

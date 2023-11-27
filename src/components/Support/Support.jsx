@@ -9,6 +9,7 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import Swal from 'sweetalert2';
+import { Typography } from '@mui/material';
 
 function Support() {
     const [newSupport, setNewSupport] = useState(useSelector(store => store.support));
@@ -37,7 +38,11 @@ function Support() {
         <div>
             <form onSubmit={handleSubmit}>
                 <FormControl>
-            <FormLabel>How supported do you feel?</FormLabel>
+            <FormLabel>
+            <Typography color="primary" variant="headline" component="h2">
+                How supported do you feel?
+                </Typography>
+                </FormLabel>
             <RadioGroup row
             value={newSupport}
             onChange={handleRadioChange}>
