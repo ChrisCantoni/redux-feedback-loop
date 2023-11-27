@@ -1,11 +1,18 @@
 table {
     text-align: center;
-    background-color:brown;
-    margin: 10px;
-    padding: 10px;
-    min-width: 1112;
+    background-color:aqua;
+    color: black;
+
 }
 
 tr:nth-child(even) {
-    background-color: #D6EEEE;
+    background-color: #08f9f9;
+  }
+
+  .feedbackList {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    min-width: 1112;
+    justify-content: center;
   }

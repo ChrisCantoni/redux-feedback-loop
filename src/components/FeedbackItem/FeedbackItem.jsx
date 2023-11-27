@@ -1,16 +1,32 @@
 import Button from '@mui/material/Button';
 import axios from 'axios';
+import FlagIcon from '@mui/icons-material/Flag';
+import EmojiFlagIcon from '@mui/icons-material/EmojiFlags';
+import Swal from 'sweetalert2';
 
 const FeedbackItem = (props) => {
 
     const deleteFeedback = () => {
-        axios.delete(`/feedback/${props.item.id}`)
-        .then((response) => {
-            props.getFeedback();
-        }).catch((error) => {
-            console.error('DELET error', error);
-            alert('Feedback could not be deleted');
-        })
+        Swal.fire({
+            title: 'Delete!',
+            text: 'Are you sure you want to delete this entry? This action cannot be undone.',
+            icon: 'error',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete this'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete(`/feedback/${props.item.id}`)
+                .then((response) => {
+                    props.getFeedback();
+                }).catch((error) => {
+                    console.error('DELETE error', error);
+                    alert('Feedback could not be deleted');
+                })
+            }
+          })
+        // TODO: Add pop-up to confirm deletion
+
+        
     }
 
     const toggleFlag = () => {
@@ -23,7 +39,8 @@ const FeedbackItem = (props) => {
         })
     }
 
-
+    // Convert SQL date formate to YYYY-MM-DD
+    let date = new Date(props.item.date).toISOString().split('T')[0];
 
     return (
         <>
@@ -33,8 +50,9 @@ const FeedbackItem = (props) => {
                 <td>{props.item.understanding}</td>
                 <td>{props.item.support}</td>
                 <td>{props.item.comments}</td>
-                <td><Button variant="contained" onClick={toggleFlag}>{props.item.flagged ? 'Flagged' : 'Not flagged'}</Button></td>
-                <td>{props.item.date}</td>
+                <td><Button variant="contained" sx={{backgroundColor:"red"}} onClick={toggleFlag}>{props.item.flagged ? <FlagIcon sx={{}}/> 
+                : <EmojiFlagIcon sx={{color:"red"}}/>}</Button></td>
+                <td>{date}</td>
                 <td><Button variant="contained" onClick={deleteFeedback}>Delete</Button></td>
             </tr>
         </>

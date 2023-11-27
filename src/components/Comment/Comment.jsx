@@ -26,7 +26,7 @@ function Comment() {
             size="medium" sx={{width: {sm:200, md:300}}}/>
             <br/>
             <div className="button">
-            <Button variant="contained" component={Link} to="/3">Back</Button>
+            <Button variant="contained" component={Link} to="/support">Back</Button>
             <Button variant="contained" type="submit">Next</Button>
             </div>
         </form>

@@ -25,24 +25,25 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
         <Router>
+          // TODO Remove Nav once everything is implemented
           <nav>
             <ul>
               <li><Link to="/">Feeling</Link></li>
-              <li><Link to="/2">Understanding</Link></li>
+              <li><Link to="/understanding">Understanding</Link></li>
               <li><Link to="/support">Support</Link></li>
-              <li><Link to="/4">Comment</Link></li>
+              <li><Link to="/comment">Comment</Link></li>
             </ul>
           </nav>
           <Route exact path="/">
             <Feeling/>
           </Route>
-          <Route exact path="/2">
+          <Route exact path="/understanding">
             <Understanding/>
           </Route>
           <Route exact path="/support">
             <Support/>
           </Route>
-          <Route exact path="/4">
+          <Route exact path="/comment">
             <Comment/>
           </Route>
           <Route exact path="/review">

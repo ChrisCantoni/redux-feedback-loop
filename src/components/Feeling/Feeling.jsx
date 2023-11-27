@@ -19,37 +19,34 @@ function Feeling() {
     }
 
     const handleSubmit = (e) => {
+        // TODO: Add pop-up to require selection
         e.preventDefault();
         console.log('Feeling', value);
         const action = {type: 'SET_FEELING', payload: value}
         dispatch(action);
-        history.push('/2');
+        history.push('/understanding');
     }
 
     return (
-        <div>
-            
-            <form onSubmit={handleSubmit}>
+    <div>
+        <form onSubmit={handleSubmit}>
             <FormControl>
-        <FormLabel>How are you feeling today?</FormLabel>
-            <RadioGroup row
-            value={value}
-            onChange={handleRadioChange}>
-
-                <FormControlLabel value="1" control={<Radio />} label="1" labelPlacement="bottom"/>
-                <FormControlLabel value="2" control={<Radio />} label="2" labelPlacement="bottom"/>
-                <FormControlLabel value="3" control={<Radio />} label="3" labelPlacement="bottom"/>
-                <FormControlLabel value="4" control={<Radio />} label="4" labelPlacement="bottom"/>
-                <FormControlLabel value="5" control={<Radio />} label="5" labelPlacement="bottom"/>
-            </RadioGroup>
-            <br/>
-            <div className="button">
-            <Button variant="contained" type="submit">Next</Button>
-            </div>
-
-        </FormControl>
+                <FormLabel>How are you feeling today?</FormLabel>
+                    <RadioGroup row
+                    value={value}
+                    onChange={handleRadioChange}>
+                       <FormControlLabel value="1" control={<Radio />} label="1" labelPlacement="bottom"/>
+                        <FormControlLabel value="2" control={<Radio />} label="2" labelPlacement="bottom"/>
+                        <FormControlLabel value="3" control={<Radio />} label="3" labelPlacement="bottom"/>
+                        <FormControlLabel value="4" control={<Radio />} label="4" labelPlacement="bottom"/>
+                        <FormControlLabel value="5" control={<Radio />} label="5" labelPlacement="bottom"/>                        </RadioGroup>
+                <br/>
+                <div className="button">
+                <Button variant="contained" type="submit">Next</Button>
+                </div>
+            </FormControl>
         </form>
-        </div>
+    </div>
     )
 }
 

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import FeedbackList from '../FeedbackList/FeedbackList';
+import '../FeedbackList/FeedbackList.css';
 
 const Admin = () => {
 
@@ -20,10 +21,9 @@ useEffect(() => {
 }, [])
 
     return (
-        <>
-        {JSON.stringify(feedbackList)}
+        <div className="feedbackList">
         <FeedbackList feedbackList={feedbackList} getFeedback={getFeedback}/>
-        </>
+        </div>
     )
 }
 

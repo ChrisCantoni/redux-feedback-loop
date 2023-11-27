@@ -37,7 +37,7 @@ function Review(){
             <h4>Support: {support}</h4>
             <h4>Comments: {comment}</h4>
             <div className="button">
-            <Button variant="contained" component={Link} to="/4">Back</Button>
+            <Button variant="contained" component={Link} to="/comment">Back</Button>
             <Button variant="contained" onClick={submitFeedback}>Submit</Button>
             </div>
         </div>

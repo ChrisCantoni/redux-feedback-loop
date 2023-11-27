@@ -3,7 +3,7 @@ import {useState} from 'react';
 import {useHistory, Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import Radio from '@mui/material/Radio';
-import RadioGroup, {useRadioGroup} from '@mui/material/RadioGroup';
+import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
@@ -23,7 +23,7 @@ function Support() {
         console.log('Support', newSupport);
         const action = {type: 'SET_SUPPORT', payload: newSupport}
         dispatch(action);
-        history.push('/4');
+        history.push('/comment');
     }
 
     return (
@@ -43,7 +43,7 @@ function Support() {
             </RadioGroup>
             <br/>
             <div className="button">
-            <Button variant="contained" component={Link} to="/2">Back</Button>
+            <Button variant="contained" component={Link} to="/understanding">Back</Button>
             <Button variant="contained" type="submit">Next</Button>
             </div>
 
