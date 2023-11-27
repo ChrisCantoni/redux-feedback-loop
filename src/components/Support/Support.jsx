@@ -8,6 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
+import Swal from 'sweetalert2';
 
 function Support() {
     const [newSupport, setNewSupport] = useState(useSelector(store => store.support));
@@ -20,10 +21,16 @@ function Support() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (newSupport === 0) {
+            Swal.fire({
+                title: "Oops, looks like you forgot something!",
+                text: 'Please make a selection before continuing.'});
+        } else {
         console.log('Support', newSupport);
         const action = {type: 'SET_SUPPORT', payload: newSupport}
         dispatch(action);
         history.push('/comment');
+        }
     }
 
     return (

@@ -10,6 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import './Understanding.css';
+import Swal from 'sweetalert2';
 
 function Understanding() {
     const [newUnderstanding, setNewUnderstanding] = useState(useSelector(store => store.understanding));
@@ -22,10 +23,16 @@ function Understanding() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (newUnderstanding === 0) {
+            Swal.fire({
+                title: "Oops, looks like you forgot something!",
+                text: 'Please make a selection before continuing.'});
+        } else {
         console.log('Understanding', newUnderstanding);
         const action = {type: 'SET_UNDERSTANDING', payload: newUnderstanding}
         dispatch(action);
         history.push('/support');
+        }
     }
 
     return (

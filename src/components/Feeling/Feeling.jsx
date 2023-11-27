@@ -8,6 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
+import Swal from 'sweetalert2';
 
 function Feeling() {
     const [value, setValue] = useState(useSelector(store => store.feeling));
@@ -21,10 +22,16 @@ function Feeling() {
     const handleSubmit = (e) => {
         // TODO: Add pop-up to require selection
         e.preventDefault();
+        if (value === 0) {
+            Swal.fire({
+                title: "Oops, looks like you forgot something!",
+                text: 'Please make a selection before continuing.'});
+        } else {
         console.log('Feeling', value);
         const action = {type: 'SET_FEELING', payload: value}
         dispatch(action);
         history.push('/understanding');
+        }
     }
 
     return (
