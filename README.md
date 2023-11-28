@@ -15,13 +15,13 @@ The feeling page
 !['A picture of the admin screen with a table of received feedback'](./public/images/feedbackAdmin.png)
 
 ### Skills practiced
-Javascript
-React
-Redux
-Material UI
-Express & Node
-PostgreSQL
-HTML & CSS
+- Javascript
+- React
+- Redux
+- Material UI
+- Express & Node
+- PostgreSQL
+- HTML & CSS
 
 ### Steps taken to build this project
 - [x] Create four React component pages
