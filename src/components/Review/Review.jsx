@@ -32,22 +32,22 @@ function Review(){
   }
 
   return (
-        <>
+        <div>
             <div className="feedback">
-            <Typography color="primary">
-            <h2>Here's a summary of your feedback:</h2>
-            <h3>Feeling: {feeling}</h3>
-            <h3>Understanding: {understanding}</h3>
-            <h3>Support: {support}</h3>
-            <h3>Comments: {comment}</h3>
-            <br/>
-            </Typography>
+                <Typography color="#E76F51">
+                    <h2>Here's a summary of your feedback:</h2>
+                    <h3>Feeling: {feeling}</h3>
+                    <h3>Understanding: {understanding}</h3>
+                    <h3>Support: {support}</h3>
+                    <h3>Comments: {comment}</h3>
+                    <br/>
+                </Typography>
             </div>
             <div className="button">
-            <Button variant="contained" component={Link} to="/comment">Back</Button>
-            <Button variant="contained" onClick={submitFeedback}>Submit</Button>
+                <Button variant="contained" sx={{backgroundColor:"#E76F51", ":hover":{backgroundColor:"#E76F51"}}} component={Link} to="/comment">Back</Button>
+                <Button variant="contained" sx={{backgroundColor:"#E76F51", ":hover":{backgroundColor:"#E76F51"}}} onClick={submitFeedback}>Submit</Button>
             </div>
-        </>
+        </div>
   )
 }
 

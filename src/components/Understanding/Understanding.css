@@ -9,12 +9,18 @@
 
   form {
     text-align: center;
+    margin: auto;
+    padding: 10px;
+    max-width: 400px;
+    box-shadow: 6px 4px 8px 4px;
   }
 
   .feedback {
     margin: auto;
     margin-bottom: 10px;
     width: 500px;
-    border: 2px solid white;
+    border: 2px solid #E76F51;
     border-width: thick;
+    color: #E76F51;
+    border-radius: 5px;
   }

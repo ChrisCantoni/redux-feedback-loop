@@ -22,7 +22,7 @@ useEffect(() => {
 
     return (
         <div className="feedbackList">
-        <FeedbackList feedbackList={feedbackList} getFeedback={getFeedback}/>
+            <FeedbackList feedbackList={feedbackList} getFeedback={getFeedback}/>
         </div>
     )
 }

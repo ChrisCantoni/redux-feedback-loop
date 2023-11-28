@@ -25,7 +25,9 @@ function Support() {
         if (newSupport === 0) {
             Swal.fire({
                 title: "Oops, looks like you forgot something!",
-                text: 'Please make a selection before continuing.'});
+                text: 'Please make a selection before continuing.',
+                confirmButtonColor: '#E76F51'
+        });
         } else {
         console.log('Support', newSupport);
         const action = {type: 'SET_SUPPORT', payload: newSupport}
@@ -39,7 +41,7 @@ function Support() {
             <form onSubmit={handleSubmit}>
                 <FormControl>
             <FormLabel>
-            <Typography color="primary" variant="headline" component="h2">
+            <Typography color="#E76F51" variant="headline" component="h2">
                 How supported do you feel?
                 </Typography>
                 </FormLabel>
@@ -47,16 +49,16 @@ function Support() {
             value={newSupport}
             onChange={handleRadioChange}>
 
-                <FormControlLabel value="1" control={<Radio />} label="1" labelPlacement="bottom"/>
-                <FormControlLabel value="2" control={<Radio />} label="2" labelPlacement="bottom"/>
-                <FormControlLabel value="3" control={<Radio />} label="3" labelPlacement="bottom"/>
-                <FormControlLabel value="4" control={<Radio />} label="4" labelPlacement="bottom"/>
-                <FormControlLabel value="5" control={<Radio />} label="5" labelPlacement="bottom"/>
+                <FormControlLabel value="1" control={<Radio sx={{'&, &.Mui-checked': {color:"#E76F51"}}}/>} label="1" labelPlacement="bottom"/>
+                <FormControlLabel value="2" control={<Radio sx={{'&, &.Mui-checked': {color:"#E76F51"}}}/>} label="2" labelPlacement="bottom"/>
+                <FormControlLabel value="3" control={<Radio sx={{'&, &.Mui-checked': {color:"#E76F51"}}}/>} label="3" labelPlacement="bottom"/>
+                <FormControlLabel value="4" control={<Radio sx={{'&, &.Mui-checked': {color:"#E76F51"}}}/>} label="4" labelPlacement="bottom"/>
+                <FormControlLabel value="5" control={<Radio sx={{'&, &.Mui-checked': {color:"#E76F51"}}}/>} label="5" labelPlacement="bottom"/>
             </RadioGroup>
             <br/>
             <div className="button">
-            <Button variant="contained" component={Link} to="/understanding">Back</Button>
-            <Button variant="contained" type="submit">Next</Button>
+            <Button variant="contained" sx={{backgroundColor:"#E76F51", ":hover":{backgroundColor:"#E76F51"}}} component={Link} to="/understanding">Back</Button>
+            <Button variant="contained" sx={{backgroundColor:"#E76F51", ":hover":{backgroundColor:"#E76F51"}}} type="submit">Next</Button>
             </div>
 
         </FormControl>

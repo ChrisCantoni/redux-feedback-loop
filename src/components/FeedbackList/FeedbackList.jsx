@@ -5,8 +5,12 @@ import FlagIcon from '@mui/icons-material/Flag';
 const FeedbackList = (props) => {
 
     return (
+        <div className='feedbackTable'>
         <table>
             <thead>
+                <tr>
+                    <th colSpan="8">Admin</th>
+                </tr>
                 <tr>
                     <th>ID</th>
                     <th>Feeling</th>
@@ -24,6 +28,7 @@ const FeedbackList = (props) => {
             })}
             </tbody>
         </table>
+        </div>
     )
 }
 

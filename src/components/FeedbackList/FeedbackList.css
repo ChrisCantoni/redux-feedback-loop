@@ -1,12 +1,28 @@
-table {
+.feedbackTable {
     text-align: center;
-    background-color:aqua;
-    color: black;
-
+    background-color:#264653;
+    color:beige;
+    border: 2px solid #E76F51;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 6px 4px 8px 4px;
 }
 
+th {
+  padding: 8px;
+}
+table {
+  border-collapse: collapse;
+}
+
+tr, td {
+    padding: 5px;
+    border: 2px solid #E76F51;
+  }
+
+
 tr:nth-child(even) {
-    background-color: #08f9f9;
+    /* background-color: #00BBF9; */
   }
 
   .feedbackList {
@@ -15,4 +31,5 @@ tr:nth-child(even) {
     padding: 10px;
     min-width: 1112;
     justify-content: center;
+    border-collapse: collapse;
   }

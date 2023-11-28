@@ -20,18 +20,18 @@ function Comment() {
 
     return (
         <div>
-            <Typography color="primary" variant="headline" component="h2">
+        <form onSubmit={handleSubmit}>
+        <Typography color="#E76F51" variant="headline" component="h2">
                 Would you like to add additional comments?            
             </Typography>
-        <form onSubmit={handleSubmit}>
-            <TextField variant="filled" placeholder="Comments are entirely optional" 
+            <TextField variant="filled" sx={{width: {sm:200, md:350}, input: {color: '#E76F51'}}} placeholder="Comments are entirely optional" 
             value={newComment} onChange={(e) => setNewComment(e.target.value)} multiline minRows={4} 
-            size="medium" sx={{width: {sm:200, md:350}}}/>
+            size="medium" />
             <br/>
             <br/>
             <div className="button">
-            <Button variant="contained" component={Link} to="/support">Back</Button>
-            <Button variant="contained" type="submit">Next</Button>
+            <Button variant="contained" sx={{backgroundColor:"#E76F51", ":hover":{backgroundColor:"#E76F51"}}} component={Link} to="/support">Back</Button>
+            <Button variant="contained" sx={{backgroundColor:"#E76F51", ":hover":{backgroundColor:"#E76F51"}}} type="submit">Next</Button>
             </div>
         </form>
         </div>

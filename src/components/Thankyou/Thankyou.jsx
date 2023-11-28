@@ -18,7 +18,7 @@ const Thankyou = () => {
     return (
         <>
             <h2>Thank you!</h2>
-            <Button variant="contained" onClick={newFeedback}>Leave New Feedback</Button>
+            <Button variant="contained" sx={{backgroundColor:"#E76F51", ":hover":{backgroundColor:"#E76F51"}}} onClick={newFeedback}>Leave New Feedback</Button>
         </>
 
     )

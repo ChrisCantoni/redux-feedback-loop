@@ -11,7 +11,10 @@ const FeedbackItem = (props) => {
             title: 'Delete!',
             text: 'Are you sure you want to delete this entry? This action cannot be undone.',
             icon: 'error',
+            iconColor: '#E76F51',
             showCancelButton: true,
+            cancelButtonColor: '#264653',
+            confirmButtonColor: '#E76F51',
             confirmButtonText: 'Yes, delete this'
           }).then((result) => {
             if (result.isConfirmed) {
@@ -50,8 +53,8 @@ const FeedbackItem = (props) => {
                 <td>{props.item.understanding}</td>
                 <td>{props.item.support}</td>
                 <td>{props.item.comments}</td>
-                <td><Button variant="contained" sx={{backgroundColor:"red", ":hover":{backgroundColor:"red"}}} onClick={toggleFlag}>{props.item.flagged ? <FlagIcon sx={{}}/> 
-                : <EmojiFlagIcon sx={{color:"red", ":hover":{backgroundColor: "red"}}}/>}</Button></td>
+                <td><Button variant="contained" sx={{backgroundColor:"#E76F51", ":hover":{backgroundColor:"#E76F51"}}} onClick={toggleFlag}>{props.item.flagged ? <FlagIcon sx={{}}/> 
+                : <EmojiFlagIcon sx={{color:"#E76F51", ":hover":{backgroundColor: "#E76F51"}}}/>}</Button></td>
                 <td>{date}</td>
                 <td><Button variant="contained" onClick={deleteFeedback}>Delete</Button></td>
             </tr>
