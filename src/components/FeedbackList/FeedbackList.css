@@ -20,11 +20,6 @@ tr, td {
     border: 2px solid #E76F51;
   }
 
-
-tr:nth-child(even) {
-    /* background-color: #00BBF9; */
-  }
-
   .feedbackList {
     display: flex;
     margin: 10px;
